@@ -15,6 +15,7 @@ const serverLinks = [
 ];
 
 const otherLinks = [
+  { href: "/",              label: "Home" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/contact",       label: "Contact" },
 ];
@@ -74,7 +75,7 @@ export default function Navbar() {
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-1">
 
-          {/* IPTV Panels dropdown */}
+          {/* Servers dropdown */}
           <div ref={dropRef} className="relative">
             <button
               onClick={() => setDropOpen(!dropOpen)}
@@ -86,7 +87,7 @@ export default function Navbar() {
                   : "text-white/70 hover:text-white hover:bg-white/8"
               }`}
             >
-              IPTV Panels
+              Servers
               <ChevronDown
                 size={14}
                 className={`transition-transform duration-200 ${dropOpen ? "rotate-180" : ""}`}
@@ -171,12 +172,12 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden bg-white border-t border-gray-100 px-4 py-4 flex flex-col gap-1">
 
-          {/* IPTV Panels expandable */}
+          {/* Servers expandable */}
           <button
             onClick={() => setMobileServers(!mobileServers)}
             className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-gray-700 hover:text-[#1a6fff] hover:bg-gray-50 transition-colors"
           >
-            IPTV Panels
+            Servers
             <ChevronDown
               size={14}
               className={`transition-transform duration-200 ${mobileServers ? "rotate-180" : ""}`}

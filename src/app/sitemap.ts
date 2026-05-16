@@ -2,50 +2,15 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://iptvresellerprovider.com";
-  const now = new Date();
+  const date = new Date("2026-05-16");
 
   return [
-    {
-      url: base,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${base}/trex`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/dino`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/strong`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/mega`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/magnum`,
-      lastModified: now,
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${base}/contact`,
-      lastModified: now,
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+    { url: base,               lastModified: date, changeFrequency: "weekly",  priority: 1.0 },
+    { url: `${base}/trex`,     lastModified: date, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/dino`,     lastModified: date, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/strong`,   lastModified: date, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/mega`,     lastModified: date, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/magnum`,   lastModified: date, changeFrequency: "weekly",  priority: 0.9 },
+    { url: `${base}/contact`,  lastModified: date, changeFrequency: "monthly", priority: 0.7 },
   ];
 }

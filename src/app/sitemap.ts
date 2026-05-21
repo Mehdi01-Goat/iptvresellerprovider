@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://iptvresellerprovider.com";
-  const date = new Date("2026-05-16");
+  const date = "2026-05-21";
 
   return [
     { url: base,               lastModified: date, changeFrequency: "weekly",  priority: 1.0 },

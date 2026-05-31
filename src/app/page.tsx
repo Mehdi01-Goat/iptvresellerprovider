@@ -88,34 +88,74 @@ const jsonLd = {
       mainEntity: [
         {
           "@type": "Question",
-          name: "How much can I earn as an IPTV reseller?",
+          name: "How much can I realistically earn as a reseller?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "With 50 clients you can earn $300–$550/month. With 100–200 clients you can reach $1,000–$2,200/month. Established resellers with 300–500 clients earn $3,000–$5,500/month.",
+            text: "It depends on your client base. With 50 clients you can earn $300–$550/month, with 100–200 clients you can reach $1,000–$2,200/month, and established resellers with 300–500 clients earn $3,000–$5,500/month. The profit comes from the difference between the wholesale price you pay us and the retail price you charge your clients. You control your own margins.",
           },
         },
         {
           "@type": "Question",
-          name: "Can I test IPTV servers before buying credits?",
+          name: "How do I get my first clients? I don't know anyone who wants IPTV.",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Yes — every server comes with a free 24-hour trial. You can test Trex, Dino, Mega, and Strong before committing to anything.",
+            text: "This is exactly what our free coaching covers. Most resellers start with Facebook groups, WhatsApp communities, Telegram channels, or local expat/sports fan groups in their area. We'll give you specific scripts, strategies, and posting templates that work.",
           },
         },
         {
           "@type": "Question",
-          name: "How much do I need to start as an IPTV reseller?",
+          name: "How much money do I need to start?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You can start with as little as $290 (our entry-level Trex package with 120 credits). Credits never expire and are fully refundable.",
+            text: "You can start with as little as $290 (our entry-level Trex package with 120 credits). That's enough to create subscriptions for 40–60 clients at 2 connections each. Credits never expire and are fully refundable if you change your mind.",
           },
         },
         {
           "@type": "Question",
-          name: "Do credits expire?",
+          name: "Can I do this part-time alongside my current job?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "No — credits never expire. Use them at your own pace. They are also fully refundable if you're not satisfied.",
+            text: "Absolutely — most of our resellers start part-time. Setting up a client takes 5 minutes. Renewals are automatic. Support is rare when the server quality is high. Many of our resellers work full-time jobs and manage 100+ clients in their spare time.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I test the servers before buying credits?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes — every server comes with a free 24-hour trial. You can test Trex, Dino, Mega, and Strong before committing to anything. Test stability, channel quality, VOD library, and speed on your own devices before spending a dollar.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What happens if a client has a technical issue?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We help you handle it. You don't need to be technical — we coach you on the most common issues (buffering, app setup, EPG) and how to resolve them quickly. For anything more complex, we're available 24/7 on WhatsApp and typically respond in under an hour.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Are your prices really wholesale? What's the difference?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We source directly from the IPTV servers with no middlemen. You're getting reseller-tier pricing — significantly lower per connection than what retail customers pay. Most of our resellers mark up 4–6x and still offer competitive prices in their market.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What payment methods do you accept?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We accept PayPal, Visa/Mastercard, USDT (TRC20/ERC20), Bitcoin (BTC), Ethereum (ETH), and bank/wire transfers. All options are fast and secure.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do credits expire? What if my business doesn't take off?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Credits never expire — use them at your own pace over months or years. And if you decide IPTV reselling isn't for you, credits are fully refundable. There's genuinely no risk to trying.",
           },
         },
       ],

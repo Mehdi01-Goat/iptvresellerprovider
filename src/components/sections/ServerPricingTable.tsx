@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { CreditTier } from "@/lib/pricing";
+import ContactPopup from "@/components/sections/ContactPopup";
 
 const included = [
   "M3U, MAG, Enigma2 & Protocol support",
@@ -19,6 +20,8 @@ const included = [
 type Props = { pricing: CreditTier[]; serverName: string; serverId: string };
 
 export default function ServerPricingTable({ pricing, serverName, serverId }: Props) {
+  const [popupCredits, setPopupCredits] = useState<number | null>(null);
+
   return (
     <section id="pricing" className="bg-gray-50 pt-24 pb-10 border-t border-gray-100">
       <div className="max-w-6xl mx-auto px-6">
@@ -93,8 +96,10 @@ export default function ServerPricingTable({ pricing, serverName, serverId }: Pr
               <div className={`text-xs mb-5 ${tier.popular ? "text-blue-100" : "text-gray-400"}`}>
                 1 credit = 1 month · 1 connection
               </div>
-              <Link
-                href={`/contact?server=${serverId}&credits=${tier.credits}`}
+
+              {/* Button now opens popup instead of linking to /contact */}
+              <button
+                onClick={() => setPopupCredits(tier.credits)}
                 className={`flex items-center justify-center gap-1.5 w-full py-2.5 rounded-lg text-sm font-semibold transition-colors ${
                   tier.popular
                     ? "bg-white text-[#1a6fff] hover:bg-blue-50"
@@ -102,14 +107,21 @@ export default function ServerPricingTable({ pricing, serverName, serverId }: Pr
                 }`}
               >
                 Get {tier.credits.toLocaleString()} Credits
-                <ArrowRight size={13} />
-              </Link>
+              </button>
             </motion.div>
           ))}
         </div>
-
-
       </div>
+
+      {/* Contact popup */}
+      {popupCredits !== null && (
+        <ContactPopup
+          open={true}
+          onClose={() => setPopupCredits(null)}
+          credits={popupCredits}
+          serverName={serverName}
+        />
+      )}
     </section>
   );
 }

@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import SiteHeader from "@/components/layout/SiteHeader";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import { posts, getPost, type Block } from "@/lib/blog";
-import { ArrowLeft, Clock, MessageCircle, Tag } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, MessageCircle, Tag } from "lucide-react";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,6 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: `https://iptvresellerprovider.com/blog/${post.slug}`,
       type: "article",
       publishedTime: post.date,
+      images: [{ url: `https://iptvresellerprovider.com${post.coverImage}`, width: 1200, height: 630, alt: post.coverAlt }],
     },
   };
 }
@@ -49,21 +51,21 @@ function renderBlock(block: Block, index: number) {
       );
     case "h3":
       return (
-        <h3 key={index} className="text-xl font-semibold text-white mt-8 mb-3">
+        <h3 key={index} className="text-xl font-semibold text-white/90 mt-8 mb-3">
           {block.text}
         </h3>
       );
     case "p":
       return (
-        <p key={index} className="text-white/65 leading-relaxed mb-4">
+        <p key={index} className="text-white/65 leading-relaxed mb-5 text-[15px]">
           {block.text}
         </p>
       );
     case "ul":
       return (
-        <ul key={index} className="space-y-2 mb-6 pl-1">
+        <ul key={index} className="space-y-2.5 mb-6 pl-1">
           {block.items.map((item, i) => (
-            <li key={i} className="flex gap-3 text-white/65 leading-relaxed">
+            <li key={i} className="flex gap-3 text-white/65 leading-relaxed text-[15px]">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#1a6fff] shrink-0" />
               {item}
             </li>
@@ -72,9 +74,9 @@ function renderBlock(block: Block, index: number) {
       );
     case "ol":
       return (
-        <ol key={index} className="space-y-2 mb-6 pl-1">
+        <ol key={index} className="space-y-2.5 mb-6 pl-1">
           {block.items.map((item, i) => (
-            <li key={i} className="flex gap-3 text-white/65 leading-relaxed">
+            <li key={i} className="flex gap-3 text-white/65 leading-relaxed text-[15px]">
               <span className="mt-0.5 text-[#1a6fff] font-bold text-sm shrink-0 w-5">{i + 1}.</span>
               {item}
             </li>
@@ -85,10 +87,40 @@ function renderBlock(block: Block, index: number) {
       return (
         <div
           key={index}
-          className="my-6 border-l-4 border-[#1a6fff] bg-[#1a6fff]/8 rounded-r-xl px-5 py-4 text-white/80 text-sm leading-relaxed"
+          className="my-7 border-l-4 border-[#1a6fff] bg-[#1a6fff]/8 rounded-r-xl px-5 py-4 text-white/80 text-sm leading-relaxed"
         >
           {block.text}
         </div>
+      );
+    case "image":
+      return (
+        <figure key={index} className="my-8 rounded-xl overflow-hidden border border-white/8">
+          <div className="relative aspect-video w-full">
+            <Image
+              src={block.src}
+              alt={block.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 720px"
+            />
+          </div>
+          {block.caption && (
+            <figcaption className="bg-white/[0.03] px-4 py-2.5 text-white/40 text-xs text-center">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
+      );
+    case "see-also":
+      return (
+        <Link
+          key={index}
+          href={block.href}
+          className="group my-5 flex items-center justify-between gap-3 bg-[#1a6fff]/8 border border-[#1a6fff]/25 rounded-xl px-5 py-3.5 hover:bg-[#1a6fff]/12 hover:border-[#1a6fff]/40 transition-all"
+        >
+          <span className="text-[#4d8fff] text-sm font-semibold">{block.label}</span>
+          <ArrowRight size={14} className="text-[#4d8fff] shrink-0 group-hover:translate-x-1 transition-transform" />
+        </Link>
       );
     default:
       return null;
@@ -112,6 +144,7 @@ export default async function BlogPostPage({ params }: Props) {
     "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
+    image: `https://iptvresellerprovider.com${post.coverImage}`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
@@ -139,12 +172,26 @@ export default async function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <SiteHeader />
-      <main className="min-h-screen bg-[#080f1e] pt-28 pb-24">
-        <div className="max-w-3xl mx-auto px-6">
+      <main className="min-h-screen bg-[#080f1e] pt-24 pb-24">
+
+        {/* Cover image hero */}
+        <div className="relative h-72 sm:h-96 w-full mb-0 overflow-hidden">
+          <Image
+            src={post.coverImage}
+            alt={post.coverAlt}
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080f1e] via-[#080f1e]/50 to-[#080f1e]/20" />
+        </div>
+
+        <div className="max-w-3xl mx-auto px-6 -mt-20 relative z-10">
           {/* Back */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm mb-10 transition-colors"
+            className="inline-flex items-center gap-2 text-white/40 hover:text-white/70 text-sm mb-6 transition-colors"
           >
             <ArrowLeft size={14} />
             All articles
@@ -177,7 +224,7 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
 
           {/* Content */}
-          <article className="prose-invert max-w-none">
+          <article>
             {post.content.map((block, i) => renderBlock(block, i))}
           </article>
 
@@ -186,7 +233,7 @@ export default async function BlogPostPage({ params }: Props) {
             <h3 className="text-xl font-bold text-white mb-2">
               Ready to Start Your IPTV Reseller Business?
             </h3>
-            <p className="text-white/55 text-sm mb-6">
+            <p className="text-white/55 text-sm mb-6 max-w-md mx-auto">
               Get a free 24-hour trial on any server and free coaching to help you land your first clients.
             </p>
             <a
@@ -209,18 +256,30 @@ export default async function BlogPostPage({ params }: Props) {
                   <Link
                     key={r.slug}
                     href={`/blog/${r.slug}`}
-                    className="group block bg-white/[0.03] border border-white/8 rounded-xl p-5 hover:border-[#1a6fff]/40 transition-all"
+                    className="group block bg-white/[0.03] border border-white/8 rounded-xl overflow-hidden hover:border-[#1a6fff]/40 transition-all"
                   >
-                    <span
-                      className={`px-2 py-0.5 rounded-full text-xs font-semibold border mb-2 inline-block ${
-                        categoryColors[r.category] ?? "bg-white/10 text-white/60 border-white/10"
-                      }`}
-                    >
-                      {r.category}
-                    </span>
-                    <p className="text-white/80 text-sm font-semibold group-hover:text-[#4d8fff] transition-colors leading-snug">
-                      {r.title}
-                    </p>
+                    <div className="relative h-32 overflow-hidden">
+                      <Image
+                        src={r.coverImage}
+                        alt={r.coverAlt}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 100vw, 340px"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#080f1e]/80 to-transparent" />
+                    </div>
+                    <div className="p-4">
+                      <span
+                        className={`px-2 py-0.5 rounded-full text-xs font-semibold border mb-2 inline-block ${
+                          categoryColors[r.category] ?? "bg-white/10 text-white/60 border-white/10"
+                        }`}
+                      >
+                        {r.category}
+                      </span>
+                      <p className="text-white/80 text-sm font-semibold group-hover:text-[#4d8fff] transition-colors leading-snug">
+                        {r.title}
+                      </p>
+                    </div>
                   </Link>
                 ))}
               </div>

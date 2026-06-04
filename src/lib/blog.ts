@@ -4,7 +4,9 @@ export type Block =
   | { type: "h3"; text: string }
   | { type: "ul"; items: string[] }
   | { type: "ol"; items: string[] }
-  | { type: "highlight"; text: string };
+  | { type: "highlight"; text: string }
+  | { type: "image"; src: string; alt: string; caption?: string }
+  | { type: "see-also"; label: string; href: string };
 
 export type Post = {
   slug: string;
@@ -13,6 +15,8 @@ export type Post = {
   date: string;
   readTime: string;
   category: string;
+  coverImage: string;
+  coverAlt: string;
   content: Block[];
 };
 
@@ -21,610 +25,350 @@ export const posts: Post[] = [
     slug: "how-to-start-iptv-reseller-business",
     title: "How to Start an IPTV Reseller Business in 2025: Step-by-Step Guide",
     excerpt:
-      "Everything you need to know to launch your own IPTV reseller business from scratch — choosing a server, buying credits, finding clients, and earning $500–$5,000/month.",
+      "Everything you need to launch your own IPTV reseller business from scratch — choosing a server, buying credits, finding clients, and earning $500–$5,000/month.",
     date: "2026-05-10",
-    readTime: "8 min read",
+    readTime: "9 min read",
     category: "Getting Started",
+    coverImage: "/images/hero.png",
+    coverAlt: "IPTV reseller business setup guide",
     content: [
-      {
-        type: "p",
-        text: "Starting an IPTV reseller business is one of the most accessible ways to earn a recurring online income today. You don't need technical skills, a physical storefront, or a large upfront investment. What you need is a reliable IPTV server, a reseller panel, and the willingness to find clients. This guide walks you through exactly how to do it.",
-      },
-      {
-        type: "h2",
-        text: "What Is an IPTV Reseller Business?",
-      },
-      {
-        type: "p",
-        text: "An IPTV reseller buys access to live TV channels, movies, and series in bulk from a wholesale provider — then resells subscriptions to individual users at a markup. Your profit is the difference between what you pay wholesale and what you charge your clients. Most resellers mark up 4–6x, which means buying at $1.40/connection and selling at $5–$8/month.",
-      },
-      {
-        type: "p",
-        text: "The business model works because IPTV services are in massive demand globally. People want to watch sports, international channels, and movies without paying $100+/month for cable. You solve that problem affordably.",
-      },
-      {
-        type: "h2",
-        text: "Step 1 — Choose Your IPTV Server",
-      },
-      {
-        type: "p",
-        text: "Your server is the foundation of your business. It determines content quality, stream stability, and how well your clients' experience. There are several top IPTV servers available for resellers:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Trex IPTV — Ultra-premium with 49,817 live channels, 184K+ movies. Best for clients who want the largest library.",
-          "Dino IPTV — Reliable mid-range server with 20,469 channels and 98K+ movies. Great value for new resellers.",
-          "Strong IPTV — High-performance server comparable to Trex. 46,976 channels and rock-solid uptime.",
-          "Mega IPTV — Budget-friendly option with strong VOD. Perfect for price-sensitive markets.",
-          "Magnum IPTV — Premium tier with excellent channel quality and consistent performance.",
-        ],
-      },
-      {
-        type: "p",
-        text: "If you're just starting, we recommend Dino IPTV because the entry price is lower ($170 for 120 credits) and it delivers excellent quality that your clients will love. You can always add more servers later.",
-      },
-      {
-        type: "h2",
-        text: "Step 2 — Buy Your First Credits Package",
-      },
-      {
-        type: "p",
-        text: "IPTV reseller panels work on a credits system. One credit typically creates one connection for one month. So if you buy 120 credits and each client needs 2 connections (for two devices), you can service 60 clients for one month — or 30 clients for two months.",
-      },
-      {
-        type: "p",
-        text: "Start small. Buy the entry-level package, get your first 20–30 clients, then reinvest your earnings to scale up. Credits never expire, so there's no pressure to sell them by a deadline.",
-      },
-      {
-        type: "highlight",
-        text: "Pro tip: Always request a free 24-hour trial before buying credits. Every serious IPTV provider offers this. Test the server yourself on the apps your clients will use — Tivimate, IPTV Smarters, Xtream Codes.",
-      },
-      {
-        type: "h2",
-        text: "Step 3 — Set Up Your Reseller Panel",
-      },
-      {
-        type: "p",
-        text: "Once you purchase credits, you get access to a reseller dashboard. From this panel you can create subscriptions for clients, set their expiry date, manage renewals, and monitor active connections. Most panels are web-based and take under 10 minutes to learn.",
-      },
-      {
-        type: "p",
-        text: "Creating a subscription for a new client takes about 5 minutes: enter their name, assign credits, generate their M3U link or Xtream Codes credentials, and send it to them. That's the entire setup process.",
-      },
-      {
-        type: "h2",
-        text: "Step 4 — Find Your First Clients",
-      },
-      {
-        type: "p",
-        text: "This is where most beginners get stuck. The good news: IPTV buyers are everywhere. You just need to know where to look and how to position yourself.",
-      },
-      {
-        type: "ol",
-        items: [
-          "Facebook Groups — Search for expat communities, sports fan groups, or cord-cutting groups in your area or target country. These are filled with people actively looking for IPTV.",
-          "WhatsApp Communities — Join local community groups and naturally introduce your service when relevant conversations come up.",
-          "Telegram Channels — Create your own channel to post offers, or join existing IPTV-related channels.",
-          "Word of Mouth — Your first 10 clients will come from people you know. Give them a great price, excellent service, and ask them to refer friends.",
-          "Online Ads — Once you have cash flow, simple Facebook or Instagram ads targeting sports fans can scale quickly.",
-        ],
-      },
-      {
-        type: "h2",
-        text: "How Much Can You Earn?",
-      },
-      {
-        type: "p",
-        text: "Your earnings scale directly with your client base. Here's a realistic breakdown:",
-      },
-      {
-        type: "ul",
-        items: [
-          "50 clients → $300–$550/month profit",
-          "100–200 clients → $1,000–$2,200/month profit",
-          "300–500 clients → $3,000–$5,500/month profit",
-        ],
-      },
-      {
-        type: "p",
-        text: "Most new resellers reach 50 clients within their first 2–3 months. Many go full-time after hitting 150–200 clients. The key is consistent client acquisition and excellent retention.",
-      },
-      {
-        type: "h2",
-        text: "Ready to Start?",
-      },
-      {
-        type: "p",
-        text: "Starting an IPTV reseller business requires minimal investment, no technical background, and can be done entirely part-time until you're ready to scale. The biggest factor is choosing a reliable server and getting your first clients — everything else follows from there.",
-      },
-      {
-        type: "p",
-        text: "Request a free trial on any of our servers, test the quality yourself, and we'll coach you through the rest. Our resellers get free ongoing support on WhatsApp — client acquisition scripts, pricing guidance, and technical help whenever you need it.",
-      },
+      { type: "p", text: "Starting an IPTV reseller business is one of the most accessible ways to earn a recurring online income today. You don't need technical skills, a physical storefront, or a large upfront investment. What you need is a reliable IPTV server, a reseller panel, and the willingness to find clients. This guide walks you through exactly how to do it — from choosing your first server to landing your first 50 paying clients." },
+      { type: "h2", text: "What Is an IPTV Reseller Business?" },
+      { type: "p", text: "An IPTV reseller buys wholesale access to live TV channels, movies, and series from a provider — then resells individual subscriptions to end users at a markup. Your profit is the difference between your wholesale cost and your retail price. Most IPTV resellers mark up 4–6x, meaning they buy at $1.40–$2.50 per connection and sell at $5–$12/month per client." },
+      { type: "p", text: "The business model works because demand for affordable IPTV is massive and growing. People want to watch sports, international channels, and unlimited VOD without paying $80–$150/month for cable. You solve that problem at a fraction of the price — and earn a recurring monthly income in the process." },
+      { type: "p", text: "Unlike drop-shipping or affiliate marketing, IPTV reselling generates true monthly recurring revenue. Once a client subscribes, they pay every month. Your income grows as your client base grows — and doesn't reset to zero each month." },
+      { type: "h2", text: "Step 1 — Choose the Right IPTV Server" },
+      { type: "p", text: "Your server is the foundation of your business. It determines content quality, stream stability, and the kind of clients you attract. There are several top IPTV servers available for resellers — each with different strengths:" },
+      { type: "ul", items: [
+        "Trex IPTV — Ultra-premium with 49,817 live channels, 184,384 movies, 40,716 series. Best for clients who want the largest library and highest quality. Entry price: $290.",
+        "Dino IPTV — Reliable mid-range server with 20,469 channels and 98,990 movies. Excellent value for new resellers starting with a lower budget. Entry price: $170.",
+        "Strong IPTV — High-performance server with 46,976 channels. Same pricing as Trex with rock-solid uptime.",
+        "Mega IPTV — Budget-friendly option with a strong VOD library. Great for price-sensitive markets.",
+        "Magnum IPTV — Premium tier with superior channel quality. Priced between Dino and Trex.",
+      ]},
+      { type: "p", text: "For new resellers, we recommend starting with Dino IPTV. The entry package is $170 (vs $290 for Trex), the quality is excellent, and it covers everything mainstream clients need — sports, international channels, movies, and series. You can always add Trex later for premium clients." },
+      { type: "see-also", label: "Compare all 5 servers and pricing →", href: "/#servers" },
+      { type: "h2", text: "Step 2 — Request a Free Trial Before Buying" },
+      { type: "p", text: "Before purchasing any credits, always test the server yourself. Every reputable IPTV reseller provider offers a free 24-hour trial. Use this trial to test on the same apps your clients will use — Tivimate, IPTV Smarters, Xtream Codes Player." },
+      { type: "highlight", text: "Test these things on your free trial: channel loading speed, sports stream stability during live matches, VOD library for movies your target market watches, and performance on mobile vs smart TV. A good trial experience predicts a good client experience." },
+      { type: "h2", text: "Step 3 — Buy Your First Credits Package" },
+      { type: "p", text: "IPTV reseller panels work on a credits system. One credit = one connection for one month. If a client needs 2 connections (two devices simultaneously), each month costs 2 credits." },
+      { type: "p", text: "Start with the entry-level package — 120 credits. At 2 connections per client, this covers 60 clients for one month, or 30 clients for two months. Start small, get your first 20–30 clients paying, then reinvest your earnings to scale. Credits never expire, so there's zero pressure to sell fast." },
+      { type: "image", src: "/images/panel-b68.png", alt: "IPTV reseller panel dashboard showing credits and active subscriptions", caption: "Your reseller panel dashboard — manage all client subscriptions from one place." },
+      { type: "h2", text: "Step 4 — Set Up Your Reseller Panel" },
+      { type: "p", text: "Once you purchase credits, you get access to your reseller dashboard. This web-based panel lets you create subscriptions, set expiry dates, assign connections, and monitor usage. It takes about 30 minutes for a complete beginner to learn. After your fifth client setup, it becomes second nature." },
+      { type: "p", text: "Creating a subscription takes under 5 minutes: enter a username, set duration and connections, click create. The panel generates an M3U link or Xtream Codes credentials. Send those to your client via WhatsApp and help them add it to their app. That's the entire setup." },
+      { type: "h2", text: "Step 5 — Find Your First Clients" },
+      { type: "p", text: "Client acquisition is where most beginners overthink things. IPTV buyers are everywhere — you just need to show up where they already are." },
+      { type: "ol", items: [
+        "Facebook Groups — Join expat communities, sports fan groups, and cord-cutting groups. When someone asks about TV options, mention IPTV and offer a free trial.",
+        "WhatsApp — Reach out directly to people in your network who watch sports or pay for cable. Offer a free 24-hour trial.",
+        "Telegram — Create your own channel and join IPTV-related groups where buyers look for providers.",
+        "Word of Mouth — Your first 10 clients likely know 5–10 more. Make them happy and ask for referrals.",
+        "Local Communities — Expat groups, sports clubs, neighborhood chats — these are packed with potential clients.",
+      ]},
+      { type: "see-also", label: "Full guide: How to get your first 50 IPTV clients →", href: "/blog/how-to-get-iptv-clients" },
+      { type: "h2", text: "Step 6 — Price Your Service Correctly" },
+      { type: "p", text: "Pricing is one of the most common mistakes new resellers make. Price too low and you kill your margins. Price too high and you slow your growth. The sweet spot in most markets is $6–$10/month for a standard 2-connection subscription." },
+      { type: "p", text: "For context: if you're using Dino IPTV ($1.42/credit) and charging $8/month for 2 connections, your cost is $2.84 and your profit is $5.16 per client per month. At 100 clients that's $516/month in profit. At 300 clients it's $1,548/month — with maybe 10 hours of work per week." },
+      { type: "h2", text: "How Much Can You Realistically Earn?" },
+      { type: "ul", items: [
+        "First month (10–20 clients): $50–$120/month — learning the business",
+        "3 months in (50 clients): $300–$550/month — solid part-time income",
+        "6 months in (100–150 clients): $600–$1,200/month — replacing a part-time job",
+        "12 months in (300+ clients): $2,000–$4,000/month — full-time income",
+      ]},
+      { type: "see-also", label: "Detailed earnings breakdown with real numbers →", href: "/blog/iptv-reseller-earnings" },
+      { type: "h2", text: "Common Mistakes to Avoid" },
+      { type: "ul", items: [
+        "Choosing a cheap, unreliable server to save money — client churn destroys recurring income faster than anything",
+        "Skipping the free trial — always test before selling",
+        "Pricing too low — underpricing devalues your service and leaves no room for growth",
+        "Not following up after sending trials — most conversions happen in the follow-up",
+        "Trying to serve every market — focus on one community (expats, sports fans, etc.) first",
+      ]},
+      { type: "h2", text: "Ready to Start?" },
+      { type: "p", text: "Starting an IPTV reseller business requires minimal investment, no technical background, and can run entirely part-time until you're ready to scale. The biggest factor in success is choosing a reliable server and committing to consistent client outreach in the first 60 days." },
+      { type: "p", text: "Request a free 24-hour trial on any of our servers, test the quality on your own devices, and message us on WhatsApp. We'll coach you on client acquisition, pricing for your market, and everything else you need to land your first clients." },
     ],
   },
   {
     slug: "iptv-reseller-earnings",
-    title: "How Much Can You Earn as an IPTV Reseller? (Real Numbers)",
+    title: "How Much Can You Earn as an IPTV Reseller? (Real Numbers for 2025)",
     excerpt:
-      "Detailed breakdown of IPTV reseller earnings at every stage — from your first 10 clients to 500+. Real numbers, real margins, real timelines.",
+      "Detailed breakdown of IPTV reseller income at every stage — from your first 10 clients to 500+. Real margins, real timelines, and what separates resellers who scale from those who stall.",
     date: "2026-05-12",
-    readTime: "6 min read",
+    readTime: "7 min read",
     category: "Income & Growth",
+    coverImage: "/images/sale-report.png",
+    coverAlt: "IPTV reseller earnings and income breakdown dashboard",
     content: [
-      {
-        type: "p",
-        text: "One of the first questions anyone asks before starting an IPTV reseller business is: how much can I actually earn? The honest answer is — it depends entirely on your client base. But the math is straightforward, and the income potential is real. Here's a complete breakdown with actual numbers.",
-      },
-      {
-        type: "h2",
-        text: "How the Profit Math Works",
-      },
-      {
-        type: "p",
-        text: "As an IPTV reseller, your profit comes from the difference between what you pay wholesale and what you charge clients. Most resellers follow this model:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Wholesale cost (Dino/Mega): ~$1.42 per connection per month",
-          "Wholesale cost (Trex/Strong): ~$2.42 per connection per month",
-          "Retail price you charge clients: $5–$10/month for 1 connection",
-          "Typical client setup: 2 connections = 1 subscription",
-        ],
-      },
-      {
-        type: "p",
-        text: "Example: You charge a client $8/month for a Dino IPTV subscription with 2 connections. Your cost is 2 × $1.42 = $2.84. Your profit on that one client is $5.16/month. Scale that to 100 clients and you're making $516/month from Dino alone.",
-      },
-      {
-        type: "h2",
-        text: "Earnings by Client Tier",
-      },
-      {
-        type: "p",
-        text: "Here's a realistic earnings breakdown at different client levels, assuming a Dino IPTV setup with an average retail price of $7/month per client:",
-      },
-      {
-        type: "ul",
-        items: [
-          "20 clients → ~$85–$120/month profit",
-          "50 clients → $300–$550/month profit",
-          "100 clients → $600–$1,000/month profit",
-          "200 clients → $1,200–$2,200/month profit",
-          "500 clients → $3,000–$5,500/month profit",
-        ],
-      },
-      {
-        type: "p",
-        text: "With Trex IPTV (higher wholesale cost, but you can charge more), your margins per client are slightly narrower but many resellers charge $10–$15/month for Trex, keeping margins healthy.",
-      },
-      {
-        type: "h2",
-        text: "Part-Time vs Full-Time Income",
-      },
-      {
-        type: "p",
-        text: "The vast majority of resellers start part-time. The business is almost entirely passive once clients are set up — renewals are managed from your panel, and client support is minimal when you're on a high-quality server.",
-      },
-      {
-        type: "ul",
-        items: [
-          "Part-time (20–50 clients): 2–5 hours/week → $100–$550/month",
-          "Active reseller (100–200 clients): 5–10 hours/week → $600–$2,200/month",
-          "Full-time (300–500+ clients): 20–30 hours/week → $3,000–$5,500/month",
-        ],
-      },
-      {
-        type: "h2",
-        text: "How Long Does It Take to Get 50 Clients?",
-      },
-      {
-        type: "p",
-        text: "This varies by how aggressively you market, but based on the experience of resellers in our network:",
-      },
-      {
-        type: "ul",
-        items: [
-          "First 10 clients: Usually 1–3 weeks (friends, family, word of mouth)",
-          "10 → 50 clients: Typically 1–3 months (Facebook groups, Telegram)",
-          "50 → 200 clients: 3–9 months (referrals + consistent outreach)",
-          "200+ clients: 6–18 months (referral loops, repeat customers, ads)",
-        ],
-      },
-      {
-        type: "h2",
-        text: "What Affects Your Earnings?",
-      },
-      {
-        type: "p",
-        text: "Several factors determine how fast you grow and how much you earn:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Server quality — Happy clients renew. Clients on unreliable servers churn. This is the #1 factor.",
-          "Your retail pricing — Pricing too low kills margins. Pricing too high slows acquisition. $6–$10/month is the sweet spot in most markets.",
-          "Your market — Expat communities, sports fans, and cord-cutters are the best target audiences.",
-          "Retention rate — A reseller with 100 clients and 90% retention earns more than one with 200 clients and 60% retention.",
-          "Upselling — Offering multi-device or annual plans increases revenue per client.",
-        ],
-      },
-      {
-        type: "h2",
-        text: "The Bottom Line",
-      },
-      {
-        type: "p",
-        text: "IPTV reselling is a genuine income opportunity, not a get-rich-quick scheme. The math is transparent, the investment is low, and the recurring nature of subscriptions means your income compounds as you grow. The resellers in our network who treat it like a real business — consistent outreach, excellent service, smart pricing — consistently hit $1,000+/month within their first year.",
-      },
+      { type: "p", text: "How much can you actually earn as an IPTV reseller? This is the question everyone asks before getting started — and the honest answer is: it depends entirely on your client base, your pricing, and your retention rate. But the math is transparent and the potential is real. Here's a complete, no-fluff breakdown with actual numbers." },
+      { type: "h2", text: "How the Profit Math Works" },
+      { type: "p", text: "Your earnings as an IPTV reseller come from the margin between your wholesale cost and your retail price. Here's how the numbers break down at the two most popular server tiers:" },
+      { type: "ul", items: [
+        "Dino/Mega IPTV: ~$1.42 per connection/month wholesale → sell at $6–$8/month per client (2 connections) → ~$3–$5 profit per client per month",
+        "Trex/Strong IPTV: ~$2.42 per connection/month wholesale → sell at $8–$12/month per client (2 connections) → ~$3–$7 profit per client per month",
+      ]},
+      { type: "p", text: "On Dino, if you charge $8/month for 2 connections, your monthly cost per client is $2.84. Your profit is $5.16. That's a 64% profit margin — significantly better than most e-commerce businesses." },
+      { type: "image", src: "/images/sale-report.png", alt: "IPTV reseller monthly income and profit margin breakdown", caption: "Monthly income scales linearly with your client base — the key is retention." },
+      { type: "h2", text: "Income by Client Tier (Dino IPTV, $8/month retail)" },
+      { type: "ul", items: [
+        "10 clients → ~$50/month profit — enough to cover your subscription costs",
+        "30 clients → ~$155/month — first meaningful side income",
+        "50 clients → ~$260–$320/month — consistent part-time income",
+        "100 clients → ~$520–$650/month — replaces a part-time job",
+        "200 clients → ~$1,000–$1,300/month — strong full-time salary in many countries",
+        "500 clients → ~$2,500–$3,500/month — top-tier reseller income",
+      ]},
+      { type: "p", text: "With Trex IPTV at $10/month retail, the math shifts: 100 clients earns ~$750–$900/month. The higher price point attracts clients who expect and value premium quality — and those clients tend to renew more reliably." },
+      { type: "h2", text: "Part-Time vs Full-Time Reality" },
+      { type: "p", text: "The most important thing to understand about IPTV reselling income is that it's almost entirely passive once clients are set up. Creating a subscription takes 5 minutes. Renewals are a 2-minute task. Support calls are rare on a high-quality server. That means:" },
+      { type: "ul", items: [
+        "0–50 clients: 3–6 hours/week total (mostly acquisition + onboarding)",
+        "50–150 clients: 5–10 hours/week (renewals, support, continued outreach)",
+        "150–400 clients: 15–25 hours/week (managing volume, staff, or automation)",
+        "400+ clients: Treat it as a full-time business with systems",
+      ]},
+      { type: "p", text: "Most successful resellers in our network worked full-time jobs while building their client base to 100–150 clients over 6–12 months. At that point, the monthly income ($600–$1,200+) gave them the confidence to either continue part-time or go full-time." },
+      { type: "h2", text: "How Long to Reach 50 Clients?" },
+      { type: "p", text: "Based on the experience of resellers we work with, here are realistic timelines for reaching key milestones — assuming consistent daily outreach:" },
+      { type: "ul", items: [
+        "First 10 clients: 1–3 weeks (personal network + first Facebook group posts)",
+        "10 → 30 clients: 3–6 weeks (word of mouth kicks in + community outreach)",
+        "30 → 50 clients: 1–2 more months (referrals start contributing)",
+        "50 → 100 clients: 2–4 months (referral loops + consistent outreach)",
+        "100 → 300 clients: 6–12 months (systems, possibly a simple website or ads)",
+      ]},
+      { type: "highlight", text: "The single biggest predictor of fast growth: giving every prospect a free 24-hour trial. Resellers who do this consistently report 60–80% conversion rates from trial to paid. Those who skip it report 20–30%." },
+      { type: "h2", text: "What Affects Your Earnings Most?" },
+      { type: "h3", text: "1. Server Quality (Biggest Factor)" },
+      { type: "p", text: "Your retention rate determines long-term income more than anything else. On a reliable server like Trex or Dino, expect 85–95% monthly retention. On an unreliable server with frequent buffering, expect 40–60%. The math is brutal: 100 clients at 60% retention shrinks to 60 clients after month 1, 36 after month 2, 22 after month 3. You can't grow if you're losing clients faster than you're adding them." },
+      { type: "see-also", label: "Trex vs Dino: which server is right for your business? →", href: "/blog/trex-vs-dino-iptv-server" },
+      { type: "h3", text: "2. Retention Strategy" },
+      { type: "p", text: "Send renewal reminders 5 days before expiry. Offer a small discount for 3-month or 6-month subscriptions upfront. Check in with clients every few weeks. Happy clients who feel supported renew automatically. The top earners in our network don't just sell — they serve." },
+      { type: "h3", text: "3. Your Market and Pricing" },
+      { type: "p", text: "Who you target matters. Expat communities (Moroccan, Algerian, African diaspora in Europe; Arab communities in North America) are among the highest-value markets because they specifically need international channels that cable doesn't carry. Sports fans are the other high-value segment — they'll pay $10–$15/month reliably because IPTV replaces $50+/month in sports packages." },
+      { type: "h2", text: "Annual Income Potential" },
+      { type: "p", text: "Here's what annual income looks like at different scales, using conservative estimates:" },
+      { type: "ul", items: [
+        "50 clients × $5 profit × 12 months = $3,000/year",
+        "100 clients × $5 profit × 12 months = $6,000/year",
+        "200 clients × $5 profit × 12 months = $12,000/year",
+        "500 clients × $5 profit × 12 months = $30,000/year",
+      ]},
+      { type: "p", text: "These are conservative numbers. Resellers who charge $8–$10/month retail (vs the $6 used in this calculation) and maintain high retention typically earn 30–50% more than these figures. The ceiling is largely determined by how much time and effort you invest in growth." },
+      { type: "h2", text: "The Bottom Line" },
+      { type: "p", text: "IPTV reselling is a legitimate recurring income business. The margins are transparent, the investment is low ($170–$290 to start), and the income compounds as your client base grows. Resellers who treat it like a real business — consistent outreach, excellent service, smart pricing — consistently hit $1,000+/month within their first year." },
     ],
   },
   {
     slug: "trex-vs-dino-iptv-server",
-    title: "Trex vs Dino IPTV: Which Server Should You Start With?",
+    title: "Trex vs Dino IPTV: Which Server Is Right for Your Reseller Business?",
     excerpt:
-      "Comparing Trex and Dino IPTV servers for resellers — content library, pricing, stability, and which one makes more sense for your market.",
+      "An honest comparison of Trex and Dino IPTV servers for resellers — content library, pricing, stability, profit margins, and which one makes more sense for your market.",
     date: "2026-05-14",
-    readTime: "5 min read",
+    readTime: "6 min read",
     category: "Server Comparison",
+    coverImage: "/images/panel-trex-main.png",
+    coverAlt: "Trex IPTV reseller panel dashboard showing live channels and VOD library",
     content: [
-      {
-        type: "p",
-        text: "When starting as an IPTV reseller, one of the first decisions you'll face is which server to use. Trex and Dino are two of the most popular options — but they serve different markets and have different pricing. Here's an honest comparison to help you choose.",
-      },
-      {
-        type: "h2",
-        text: "Quick Overview",
-      },
-      {
-        type: "ul",
-        items: [
-          "Trex IPTV: Ultra-premium, 49,817 live channels, 184,384 movies, 40,716 series. Entry price: $290 for 120 credits.",
-          "Dino IPTV: Reliable mid-range, 20,469 live channels, 98,990 movies, 23,141 series. Entry price: $170 for 120 credits.",
-        ],
-      },
-      {
-        type: "h2",
-        text: "Content Library",
-      },
-      {
-        type: "p",
-        text: "Trex carries more than double the live channels of Dino — nearly 50,000 channels compared to around 20,000. For clients who want international channels, sports packages from every region, or very niche content, Trex is unmatched.",
-      },
-      {
-        type: "p",
-        text: "Dino's library is still very large — 98,990 movies and 23,141 series is more than most clients will ever watch. If your target market is mainstream (English, French, Arabic, Spanish content), Dino covers everything they need.",
-      },
-      {
-        type: "h2",
-        text: "Pricing for Resellers",
-      },
-      {
-        type: "p",
-        text: "The pricing difference is significant. Trex costs $290 for 120 credits (~$2.42/credit) while Dino is $170 for 120 credits (~$1.42/credit). That's $1/credit difference — which adds up fast at scale.",
-      },
-      {
-        type: "p",
-        text: "At 200 clients (400 connections/month), Trex costs you $968/month in credits. Dino costs you $568/month. That's $400/month in extra margin if your clients don't specifically need Trex's premium content.",
-      },
-      {
-        type: "h2",
-        text: "What You Can Charge Clients",
-      },
-      {
-        type: "p",
-        text: "Because Trex is premium, you can justify a higher retail price. Most Trex resellers charge $10–$15/month. Dino resellers typically charge $6–$10/month. The profit margins are actually similar — the difference is your client's expectations and willingness to pay.",
-      },
-      {
-        type: "h2",
-        text: "Stability & Uptime",
-      },
-      {
-        type: "p",
-        text: "Both servers are highly stable and used by thousands of resellers worldwide. Trex has a slight edge during major live events (World Cup, Champions League, boxing matches) due to its infrastructure capacity. Dino handles standard daily viewing without issues.",
-      },
-      {
-        type: "h2",
-        text: "Who Should Choose Trex?",
-      },
-      {
-        type: "ul",
-        items: [
-          "Resellers targeting sports-obsessed clients who want every channel",
-          "Markets where clients expect premium and will pay $12–$15/month",
-          "Resellers who want to differentiate with the best product available",
-          "Clients who have tried other IPTV services and want an upgrade",
-        ],
-      },
-      {
-        type: "h2",
-        text: "Who Should Choose Dino?",
-      },
-      {
-        type: "ul",
-        items: [
-          "New resellers starting with a smaller budget ($170 entry vs $290)",
-          "Markets where price sensitivity is high and $6–$8/month is the sweet spot",
-          "Resellers focused on volume (more clients at lower margin per client)",
-          "Expat communities where mainstream international channels are the priority",
-        ],
-      },
-      {
-        type: "highlight",
-        text: "Our recommendation: Start with Dino to lower your risk and test your market. Once you have 30+ clients and understand what they want, add Trex for clients willing to pay more. Many successful resellers run both servers simultaneously.",
-      },
-      {
-        type: "h2",
-        text: "Can You Use Both?",
-      },
-      {
-        type: "p",
-        text: "Yes, and this is actually what many of our top resellers do. They use Dino as their standard tier and Trex as their premium tier. Clients self-select based on their budget. This two-tier approach maximizes both volume and margin.",
-      },
-      {
-        type: "p",
-        text: "Both servers come with free 24-hour trials. Test them on the same device with the same apps before deciding — or test both and see which one performs better in your specific region.",
-      },
+      { type: "p", text: "When starting as an IPTV reseller, one of the first decisions you'll face is which server to use. Trex and Dino are two of the most popular choices — but they serve different markets and have significantly different pricing. Here's an honest, detailed comparison so you can make the right decision for your business." },
+      { type: "h2", text: "Quick Overview" },
+      { type: "ul", items: [
+        "Trex IPTV: Ultra-premium tier. 49,817 live channels, 184,384 movies, 40,716 series. Entry price: $290 for 120 credits.",
+        "Dino IPTV: Reliable mid-range tier. 20,469 live channels, 98,990 movies, 23,141 series. Entry price: $170 for 120 credits.",
+      ]},
+      { type: "image", src: "/images/panel-trex-main.png", alt: "Trex IPTV reseller panel with 49817 channels and 184384 movies", caption: "Trex IPTV panel — the ultra-premium server for resellers who want the best." },
+      { type: "h2", text: "Content Library: Quality vs Quantity" },
+      { type: "p", text: "Trex carries nearly 50,000 live channels — more than double Dino's 20,000. The difference shows up in niche international content: if your clients want specific regional channels from Southeast Asia, Eastern Europe, or sub-Saharan Africa, Trex is likely to have them. Dino's library covers all mainstream markets (English, French, Arabic, Spanish, Portuguese) comprehensively." },
+      { type: "p", text: "On VOD, both servers offer enormous libraries. Trex has 184,384 movies to Dino's 98,990 — but the reality is most clients will never watch more than a few hundred movies. For practical day-to-day viewing, Dino's library is more than sufficient." },
+      { type: "h2", text: "Pricing Comparison for Resellers" },
+      { type: "p", text: "The pricing difference is significant and worth thinking through carefully:" },
+      { type: "ul", items: [
+        "Trex: $290 for 120 credits = $2.42/credit",
+        "Dino: $170 for 120 credits = $1.42/credit",
+        "Difference: $1.00 per credit",
+      ]},
+      { type: "p", text: "At 200 active clients needing 400 credits/month: Trex costs $968/month in credits. Dino costs $568/month. That's a $400/month difference in operating cost — which either goes into your pocket as extra profit or allows you to offer more competitive retail pricing." },
+      { type: "image", src: "/images/panel-dino-main.png", alt: "Dino IPTV reseller panel with 20469 channels and 98990 movies", caption: "Dino IPTV panel — reliable performance with significantly lower wholesale cost." },
+      { type: "h2", text: "What You Can Charge Clients" },
+      { type: "p", text: "Because Trex is premium, you can justify higher retail prices. Typical Trex resellers charge $10–$15/month per client. Dino resellers typically charge $6–$10/month. The profit margins are actually similar on a percentage basis — the key difference is your clients' expectations." },
+      { type: "p", text: "Trex clients expect the best. When they pay $12/month they want flawless streams for Champions League, 4K channels, and zero buffering. Dino clients at $7/month are typically happy with solid, reliable performance across mainstream content. Both servers deliver on their promise when running at capacity." },
+      { type: "h2", text: "Stability and Uptime" },
+      { type: "p", text: "Both Trex and Dino are industry-leading servers with strong uptime records. Trex has an infrastructure advantage during peak events — major football finals, boxing matches, pay-per-view events — where concurrent stream load spikes globally. Dino handles standard daily viewing reliably and performs well even during moderate-traffic events." },
+      { type: "p", text: "For most resellers whose clients watch everyday content — regular football, series, movies, international news — both servers perform at the same level." },
+      { type: "h2", text: "Who Should Choose Trex?" },
+      { type: "ul", items: [
+        "Resellers whose clients are die-hard sports fans who need every possible channel",
+        "Markets where clients have tried other IPTV services and are upgrading for quality",
+        "Resellers who want to charge $10–$15/month and position themselves as premium",
+        "Resellers serving multilingual or niche international communities with specific channel needs",
+        "Experienced resellers scaling up who want the best possible retention rate",
+      ]},
+      { type: "see-also", label: "See Trex IPTV full pricing and channel list →", href: "/trex" },
+      { type: "h2", text: "Who Should Choose Dino?" },
+      { type: "ul", items: [
+        "New resellers starting with a tighter budget ($170 vs $290 entry)",
+        "Markets where $6–$8/month is the sweet spot for client acquisition",
+        "Resellers targeting mainstream audiences (not hardcore sports or niche channels)",
+        "Resellers focused on volume — more clients at a slightly lower margin per client",
+        "Anyone who wants to test the IPTV reseller model before committing to premium pricing",
+      ]},
+      { type: "see-also", label: "See Dino IPTV full pricing and channel list →", href: "/dino" },
+      { type: "highlight", text: "Our recommendation: Start with Dino to minimize risk and test your market. Once you have 30+ happy clients and understand what they actually watch, add Trex for premium-tier clients. Many of our most successful resellers run both servers simultaneously — Dino as their standard plan and Trex as their premium plan." },
+      { type: "h2", text: "Running Both Servers: The Two-Tier Strategy" },
+      { type: "p", text: "The two-tier approach is exactly what many top resellers do. Standard plan (Dino): $7/month. Premium plan (Trex): $12/month. Clients self-select based on budget and needs. You maximize both volume (Dino handles price-sensitive clients) and margin (Trex handles premium clients who pay more and churn less)." },
+      { type: "p", text: "Both servers come with free 24-hour trials. Test them side-by-side on the same device, same apps, same channels — and see which one performs better for your specific audience. The free trial removes all the guesswork." },
     ],
   },
   {
     slug: "how-to-get-iptv-clients",
     title: "How to Get Your First 50 IPTV Clients (Without Paid Ads)",
     excerpt:
-      "A practical, proven playbook for finding IPTV clients from scratch — Facebook groups, WhatsApp, Telegram, and word-of-mouth strategies that actually work.",
+      "A proven, step-by-step playbook for finding IPTV clients from zero — Facebook, WhatsApp, Telegram, and word-of-mouth strategies that resellers in our network use to grow fast.",
     date: "2026-05-16",
-    readTime: "7 min read",
+    readTime: "8 min read",
     category: "Client Acquisition",
+    coverImage: "/images/panel-b68.png",
+    coverAlt: "IPTV reseller managing client subscriptions and growing their client base",
     content: [
-      {
-        type: "p",
-        text: "Getting your first IPTV clients is the hardest part of building a reseller business. Once you have 20–30 happy customers, referrals kick in and growth becomes easier. But that first stretch — from zero to 50 — requires deliberate effort. Here's exactly how to do it without spending a dollar on ads.",
-      },
-      {
-        type: "h2",
-        text: "The Mindset Shift First",
-      },
-      {
-        type: "p",
-        text: "Most beginners think they need to 'sell' IPTV. In reality, you just need to find people who are already looking for it. IPTV buyers exist in large numbers in specific online communities. Your job is to show up where they are, be helpful, and offer a better option than whatever they're currently using.",
-      },
-      {
-        type: "h2",
-        text: "Strategy 1 — Facebook Groups",
-      },
-      {
-        type: "p",
-        text: "Facebook groups are the single best source of IPTV clients. Here's the playbook:",
-      },
-      {
-        type: "ol",
-        items: [
-          "Search for relevant groups: '[Your city] Expats', '[Country] Community', 'Cord Cutting [Country]', '[Sport] Fans [Country]', 'Somali/Moroccan/French diaspora [city]'",
-          "Join 10–15 relevant groups and spend a week being genuinely helpful — answer questions, share tips, don't mention IPTV yet",
-          "When someone posts asking about TV options, cheap cable alternatives, or how to watch [sport] — that's your moment",
-          "Reply with value first, then mention you offer IPTV. Offer a free 24-hour trial",
-          "Move the conversation to private messages or WhatsApp",
-        ],
-      },
-      {
-        type: "p",
-        text: "The key is to not spam. One genuine helpful reply in 10 groups beats 100 copy-pasted ads in one group. Facebook restricts blatant promotion, but helpful community members can naturally mention their services.",
-      },
-      {
-        type: "h2",
-        text: "Strategy 2 — WhatsApp Communities",
-      },
-      {
-        type: "p",
-        text: "WhatsApp is where IPTV sales actually close. Use it in two ways:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Join local community groups (neighborhood groups, school parent groups, sports fan groups) and mention your service naturally when relevant",
-          "Create your own WhatsApp broadcast list — once you have 10+ clients, add them all and send monthly promotions, renewal reminders, and new content announcements",
-          "Create a WhatsApp status updating your 'now available' content, like new sports seasons or movie releases — this keeps IPTV top of mind for your contacts",
-        ],
-      },
-      {
-        type: "h2",
-        text: "Strategy 3 — Telegram Channels",
-      },
-      {
-        type: "p",
-        text: "Telegram is where tech-savvy IPTV buyers gather. The approach:",
-      },
-      {
-        type: "ol",
-        items: [
-          "Create your own Telegram channel: '@YourNameIPTV'. Post free trial offers, pricing, and what's included.",
-          "Join IPTV-related groups and search groups. When people ask for recommendations, share your channel.",
-          "Offer exclusive deals to Telegram subscribers (e.g., first month at a discount) to build your list.",
-        ],
-      },
-      {
-        type: "h2",
-        text: "Strategy 4 — Your Existing Network",
-      },
-      {
-        type: "p",
-        text: "Don't underestimate your personal network. Your first 10 clients are probably within reach right now. Think about:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Friends and family who currently pay for cable or streaming services",
-          "Coworkers who watch sports",
-          "People in your cultural/diaspora community",
-          "Anyone who has mentioned hating their cable bill",
-        ],
-      },
-      {
-        type: "p",
-        text: "Approach them casually: 'Hey, I just started offering IPTV — you get 10,000+ channels, all sports, and movies for $7/month. Want a free day trial to check it out?' The free trial removes all friction and converts at a very high rate.",
-      },
-      {
-        type: "h2",
-        text: "The Free Trial Is Your Best Sales Tool",
-      },
-      {
-        type: "highlight",
-        text: "Give every single prospect a free 24-hour trial before asking for money. This one habit will double your conversion rate. Once someone watches a full Champions League match or their favorite shows in HD on your IPTV, the sale is essentially done.",
-      },
-      {
-        type: "h2",
-        text: "What to Say When Following Up",
-      },
-      {
-        type: "p",
-        text: "After sending a trial, follow up after 20–24 hours: 'Hey, did you get a chance to test it? How did it look?' If they say it was good — close: 'Great! First month is $X. I can set it up right now.' If they had issues — troubleshoot and extend the trial. Don't abandon a hot lead over a technical hiccup.",
-      },
-      {
-        type: "h2",
-        text: "Referrals: The Growth Engine After 30 Clients",
-      },
-      {
-        type: "p",
-        text: "Once you have 30 happy clients, set up a referral program. Offer one free week or a discount for every client they refer who signs up. A single enthusiastic client can bring 3–5 referrals. At 50 clients with a referral program running, your growth becomes partly automatic.",
-      },
-      {
-        type: "p",
-        text: "Resellers who hit 50 clients in 60 days are almost always those who combined Facebook group outreach with a strong personal network push in the first month. Don't overthink the strategy — start today with the people and groups already around you.",
-      },
+      { type: "p", text: "Getting your first IPTV clients is the hardest part of building a reseller business. Not because the product is hard to sell — it isn't. But because most beginners don't know where to look or how to approach potential buyers. This guide gives you the exact playbook our most successful resellers use to go from zero to 50 clients without spending a dollar on advertising." },
+      { type: "h2", text: "The Right Mindset Before You Start" },
+      { type: "p", text: "The biggest mistake new IPTV resellers make is trying to 'sell' to everyone. IPTV is not a product you convince people to want — it's a solution to a problem millions of people already have: expensive cable bills, missing international channels, and paying $10–$15/month per streaming service." },
+      { type: "p", text: "Your job is to find people who already want affordable TV and show them a better option. You're not convincing — you're presenting. This mindset shift changes everything about how you approach outreach." },
+      { type: "image", src: "/images/panel-b68.png", alt: "IPTV reseller panel dashboard showing active client subscriptions", caption: "Every active subscription in your panel is recurring monthly income — the goal is to fill it up." },
+      { type: "h2", text: "Strategy 1 — Facebook Groups (Your Best Source)" },
+      { type: "p", text: "Facebook groups are the single most effective free source of IPTV clients. Here's the exact approach:" },
+      { type: "ol", items: [
+        "Search for these group types: '[City] Expats', '[Country] Community UK/USA/France', 'Cord Cutting [Country]', '[Football Club] Fans', 'Moroccan/Algerian/African community [city]', 'Arab community [city]'",
+        "Join 10–15 groups and spend 5–7 days being genuinely helpful before mentioning IPTV. Answer questions, share useful posts. Become a known face.",
+        "Look for trigger posts: someone complaining about cable prices, asking how to watch [sport] abroad, asking for TV recommendations, or complaining their current IPTV stopped working.",
+        "Reply with value: acknowledge their problem, explain briefly that you offer IPTV with [X channels, free trial, $X/month], and offer to DM them details.",
+        "Move to WhatsApp immediately. Send a free 24-hour trial. Follow up after 20 hours.",
+      ]},
+      { type: "p", text: "The key is consistency. Two well-placed replies per day in 5 groups = 10 conversations started per day. At a 30% trial-to-paid conversion, that's 3 new clients per day — 90 clients per month. Even at 10% conversion, that's 30 clients/month from pure Facebook group activity." },
+      { type: "h2", text: "Strategy 2 — WhatsApp Direct Outreach" },
+      { type: "p", text: "WhatsApp is where deals close. Use it as both an outreach and a closing tool:" },
+      { type: "ul", items: [
+        "Go through your contacts — everyone who pays for cable, Sky, or streaming services is a potential client. Message them casually: 'Hey, I started offering IPTV — 10,000+ channels, all sports, for $7/month. Want to try it free for 24 hours?'",
+        "Create a WhatsApp broadcast list for your clients. Send monthly renewal reminders, new content updates, and occasional promotions.",
+        "Set a WhatsApp status with your service: '🔴 Live: Champions League on IPTV — $7/month, free trial available. DM me.' Update it before major sports events.",
+        "Ask every new client: 'If you know anyone who'd like this, I'll give you a free week for every person you refer.' This alone can add 3–5 clients per existing client.",
+      ]},
+      { type: "h2", text: "Strategy 3 — Telegram Channels" },
+      { type: "p", text: "Telegram is where tech-savvy IPTV buyers actively search for providers. Create a dedicated channel for your reseller business:" },
+      { type: "ol", items: [
+        "Create a channel: '@YourNameIPTV' or '@YourCityIPTV'. Pin a post with your pricing, trial offer, and contact info.",
+        "Post weekly: upcoming sports fixtures, new movie releases on your server, client testimonials, limited-time offers.",
+        "Join IPTV-related Telegram groups and respond when people ask for provider recommendations.",
+        "Cross-promote: mention your Telegram channel on your Facebook posts to funnel followers there.",
+      ]},
+      { type: "h2", text: "Strategy 4 — Your Immediate Personal Network" },
+      { type: "p", text: "Don't overlook the people already around you. Your first 10–15 clients are almost certainly in your contacts right now. Think specifically about:" },
+      { type: "ul", items: [
+        "Friends and family who pay for cable, Sky Sports, or multiple streaming subscriptions",
+        "People who have mentioned watching football, boxing, or major sports events",
+        "Coworkers — especially anyone who talks about missing TV from their home country",
+        "Members of diaspora communities you belong to",
+        "People who have asked you for TV recommendations in the past",
+      ]},
+      { type: "p", text: "Text or call 5 people this week. Don't pitch — have a conversation. 'Hey, I started offering IPTV on the side. You get thousands of channels for $7/month. I can set up a free trial for you tomorrow if you want to check it out.' That's it." },
+      { type: "h2", text: "The Free Trial: Your Most Powerful Sales Tool" },
+      { type: "highlight", text: "Give every single prospect a free 24-hour trial before asking for money. This single habit will double your conversion rate. The moment someone watches their favorite match, series, or international channel in HD on your IPTV, the sale is essentially done. Never skip the trial." },
+      { type: "h2", text: "How to Follow Up After a Trial" },
+      { type: "p", text: "Most conversions happen in the follow-up, not the trial itself. Send a message 20–22 hours into the trial:" },
+      { type: "p", text: "'Hey [Name] — your trial is about to expire. How did it look? Did you get to test [specific channel or sport they mentioned]?'" },
+      { type: "p", text: "If they say it was good: 'Great! I can set up your first month for $X right now. Takes 2 minutes.' Close immediately." },
+      { type: "p", text: "If they had issues: Troubleshoot, extend the trial by 24 hours, fix the problem. Don't let a hot lead go cold over a technical issue." },
+      { type: "p", text: "If they don't respond: Follow up once more at 48 hours: 'Hey, just checking — did you get to test the trial? Still happy to set you up if you're interested.' Then let it go." },
+      { type: "h2", text: "Building Your Referral Engine (After 30 Clients)" },
+      { type: "p", text: "Once you have 30 happy clients, activate your referral program. Tell every client: 'If you know anyone who'd like IPTV, I'll give you a free week for every person they sign up. Just send them to me and mention your name.'" },
+      { type: "p", text: "A well-serviced client base of 30 people can generate 5–10 referrals per month through this approach. Combined with Facebook and WhatsApp outreach, hitting 50 clients within 60–90 days is realistic for anyone who commits to it consistently." },
+      { type: "see-also", label: "Start with a free trial on Dino IPTV — the best server for new resellers →", href: "/dino" },
     ],
   },
   {
     slug: "iptv-reseller-panel-explained",
     title: "IPTV Reseller Panel Explained: Credits, Connections & How It All Works",
     excerpt:
-      "New to IPTV reselling? This guide explains everything about reseller panels — what credits are, how connections work, how to create subscriptions, and how to manage your clients.",
+      "Complete guide to IPTV reseller panels — what credits are, how connections work, how to create client subscriptions, and how to manage renewals efficiently.",
     date: "2026-05-19",
-    readTime: "6 min read",
+    readTime: "7 min read",
     category: "Getting Started",
+    coverImage: "/images/trex-feature-1.png",
+    coverAlt: "IPTV reseller panel showing live channels and subscription management",
     content: [
-      {
-        type: "p",
-        text: "If you're new to IPTV reselling, the technical side can seem overwhelming at first. Panels, credits, M3U links, Xtream Codes, connections — there's a lot of jargon. This guide breaks it all down in plain language so you can get started confidently.",
-      },
-      {
-        type: "h2",
-        text: "What Is an IPTV Reseller Panel?",
-      },
-      {
-        type: "p",
-        text: "An IPTV reseller panel is a web-based dashboard that gives you control over your client subscriptions. Through your panel, you can:",
-      },
-      {
-        type: "ul",
-        items: [
-          "Create new subscriptions for clients",
-          "Set how long each subscription lasts (1 month, 3 months, 12 months, etc.)",
-          "Assign the number of connections (devices) per subscription",
-          "View which subscriptions are active, expiring soon, or expired",
-          "Renew client subscriptions when they expire",
-          "Monitor live usage — how many connections are active right now",
-        ],
-      },
-      {
-        type: "p",
-        text: "Most panels are web-based and accessible from any browser. The interface is straightforward — if you can use a basic website, you can manage a reseller panel.",
-      },
-      {
-        type: "h2",
-        text: "What Are IPTV Credits?",
-      },
-      {
-        type: "p",
-        text: "Credits are the currency of your reseller panel. One credit = one connection for one month. When you create a subscription for a client, the panel deducts credits from your balance based on the number of connections and duration.",
-      },
-      {
-        type: "p",
-        text: "Example: You create a 1-month subscription with 2 connections. The panel deducts 2 credits. You create a 3-month subscription with 2 connections. The panel deducts 6 credits (2 connections × 3 months).",
-      },
-      {
-        type: "highlight",
-        text: "Important: IPTV credits never expire. If you buy 120 credits and only use 40 in the first month, the remaining 80 stay in your account indefinitely. This means there's no pressure to sell quickly.",
-      },
-      {
-        type: "h2",
-        text: "What Are Connections?",
-      },
-      {
-        type: "p",
-        text: "A connection is one simultaneous stream. If a client has 2 connections, they can watch IPTV on 2 devices at the same time — for example, one TV and one phone. If they try to open a third stream, the panel blocks it.",
-      },
-      {
-        type: "p",
-        text: "Most standard client subscriptions use 2 connections. Families or clients with multiple TVs may want 3–4. You can set whatever number makes sense and price accordingly.",
-      },
-      {
-        type: "h2",
-        text: "What Is an M3U Link / Xtream Codes?",
-      },
-      {
-        type: "p",
-        text: "When you create a subscription, the panel generates credentials for your client to use in their IPTV app. There are two main formats:",
-      },
-      {
-        type: "ul",
-        items: [
-          "M3U URL: A single link that the client pastes into their IPTV app. Easy and universal — works with almost every IPTV app.",
-          "Xtream Codes: A server URL, username, and password. More flexible and works with apps like Tivimate, IPTV Smarters, and Perfect Player.",
-        ],
-      },
-      {
-        type: "p",
-        text: "Both formats work with the same apps. Most clients prefer Xtream Codes because popular apps like Tivimate have better features when using this format. You'll provide whichever format your client's app supports.",
-      },
-      {
-        type: "h2",
-        text: "How to Set Up a Client Subscription (Step by Step)",
-      },
-      {
-        type: "ol",
-        items: [
-          "Log in to your reseller panel",
-          "Go to 'Create Subscription' or 'Add User'",
-          "Enter a username (usually the client's name or nickname)",
-          "Choose duration (1 month, 3 months, etc.)",
-          "Set number of connections (usually 2)",
-          "Click create — the panel deducts credits and generates credentials",
-          "Send the M3U link or Xtream Codes to your client via WhatsApp",
-          "Help them add it to their IPTV app (takes 2 minutes)",
-        ],
-      },
-      {
-        type: "h2",
-        text: "Managing Renewals",
-      },
-      {
-        type: "p",
-        text: "Renewals are the backbone of your recurring income. Your panel shows you all subscriptions with their expiry dates. To renew, you simply extend the subscription — this deducts credits again and adds time to the client's account.",
-      },
-      {
-        type: "p",
-        text: "The smart approach: send a WhatsApp message 5–7 days before expiry reminding the client to renew. Most renew automatically. Over time, this becomes a predictable monthly revenue stream — you know roughly how many credits you'll need each month based on your active client base.",
-      },
-      {
-        type: "h2",
-        text: "Common Questions",
-      },
-      {
-        type: "ul",
-        items: [
-          "Can I offer different subscription lengths? Yes. You control the duration — 1 month, 3 months, 6 months, or yearly.",
-          "What if a client has buffering issues? Usually a speed test or app restart fixes it. Our support team guides you on troubleshooting.",
-          "Can I change a client's connection count? Yes, from your panel at any time.",
-          "What if a client's subscription runs out of connections mid-month? The excess stream is blocked. You can add more connections if the client wants.",
-          "Do I need technical skills? No. If you can follow these steps, you can run a reseller panel.",
-        ],
-      },
-      {
-        type: "p",
-        text: "The reseller panel is genuinely simple to use day-to-day. The learning curve is about 30 minutes for a complete beginner. After your first 5 client setups, it becomes second nature.",
-      },
+      { type: "p", text: "If you're new to IPTV reselling, the technical side can feel overwhelming at first. Panels, credits, M3U links, Xtream Codes, connections — there's a lot of unfamiliar terminology. But once you understand the core concepts, you'll realize it's genuinely simple. This guide explains everything you need to know before you make your first purchase." },
+      { type: "h2", text: "What Is an IPTV Reseller Panel?" },
+      { type: "p", text: "An IPTV reseller panel is a web-based dashboard that gives you full control over your clients' subscriptions. Think of it as your business management tool. Through your panel, you can:" },
+      { type: "ul", items: [
+        "Create new subscriptions for clients (takes under 5 minutes)",
+        "Set subscription duration — 1 month, 3 months, 6 months, or annual",
+        "Assign the number of simultaneous connections (devices)",
+        "View all active, expiring, and expired subscriptions at a glance",
+        "Renew subscriptions when they're about to expire",
+        "Monitor live usage — see how many streams are active in real time",
+        "Disable or suspend subscriptions if needed",
+      ]},
+      { type: "p", text: "Most reseller panels are web-based, mobile-friendly, and accessible from any browser. There's no software to install. If you can navigate a basic website, you can manage a reseller panel. The average learning curve for a complete beginner is about 30 minutes." },
+      { type: "image", src: "/images/trex-feature-1.png", alt: "IPTV reseller panel interface showing live channels and subscription management tools", caption: "A typical IPTV reseller panel — everything you need to manage your business in one place." },
+      { type: "h2", text: "What Are IPTV Credits?" },
+      { type: "p", text: "Credits are the core currency of your reseller business. The rule is simple: 1 credit = 1 connection for 1 month." },
+      { type: "p", text: "When you buy an IPTV reseller package, you're buying a balance of credits. Every time you create a subscription, the panel deducts credits based on the duration and number of connections you assign." },
+      { type: "ul", items: [
+        "1-month subscription, 2 connections = 2 credits deducted",
+        "3-month subscription, 2 connections = 6 credits deducted",
+        "6-month subscription, 2 connections = 12 credits deducted",
+        "12-month subscription, 2 connections = 24 credits deducted",
+      ]},
+      { type: "highlight", text: "Key fact: IPTV credits never expire. If you buy 120 credits and only use 40 in the first month, the remaining 80 stay in your balance indefinitely. This means you can start small, get clients, and scale at your own pace — with zero pressure." },
+      { type: "h2", text: "What Are Connections?" },
+      { type: "p", text: "A connection is one simultaneous IPTV stream. If a client has 2 connections, they can watch on 2 devices at the same time. If they try to open a third stream, the panel blocks it automatically." },
+      { type: "p", text: "Standard setup for most clients is 2 connections — covering a smart TV and a phone, or two TVs in different rooms. Families often want 3–4 connections. You set the number when creating the subscription and can adjust it anytime." },
+      { type: "p", text: "As a reseller, you charge more for extra connections. Example: 2 connections for $7/month, 4 connections for $12/month. This upsell opportunity is easy because clients with large families naturally want more devices covered." },
+      { type: "h2", text: "M3U Links vs Xtream Codes: What's the Difference?" },
+      { type: "p", text: "When you create a subscription in your panel, it generates login credentials your client uses in their IPTV app. There are two main formats:" },
+      { type: "h3", text: "M3U URL" },
+      { type: "p", text: "A single URL that clients paste directly into their IPTV app. It looks like: http://server.domain.com:port/get.php?username=xxx&password=yyy&type=m3u_plus. Simple and universal — works with nearly every IPTV app on the market." },
+      { type: "h3", text: "Xtream Codes" },
+      { type: "p", text: "Three separate fields: server URL, username, and password. More flexible and enables richer features in advanced apps. Works with Tivimate, IPTV Smarters Pro, Perfect Player, and most premium IPTV apps. When clients use Tivimate (the most popular app), Xtream Codes is the preferred format because it enables EPG (electronic program guide), catch-up TV, and better channel organization." },
+      { type: "p", text: "In practice: give clients Xtream Codes if they use Tivimate or IPTV Smarters. Give them the M3U URL if they use a basic app or smart TV. Both work — the difference is in the app features they unlock." },
+      { type: "h2", text: "Step-by-Step: Creating Your First Client Subscription" },
+      { type: "ol", items: [
+        "Log in to your reseller panel from any browser",
+        "Click 'Create Subscription' or 'Add User' (varies by panel interface)",
+        "Enter a username — usually the client's name or a nickname",
+        "Choose subscription duration: 1 month, 3 months, etc.",
+        "Set number of connections: usually 2 for standard clients",
+        "Click 'Create' — the panel deducts credits and generates credentials instantly",
+        "Copy the M3U URL or Xtream Codes credentials",
+        "Send to client via WhatsApp — they add it to their app in 2 minutes",
+        "Follow up after 24 hours to confirm everything is working",
+      ]},
+      { type: "image", src: "/images/panel-b68.png", alt: "IPTV reseller panel dashboard showing client subscriptions and credit balance", caption: "Your credit balance and all active subscriptions are visible at a glance from your dashboard." },
+      { type: "h2", text: "Managing Renewals Efficiently" },
+      { type: "p", text: "Renewals are the engine of your recurring income. Your panel shows every subscription with its expiry date. The renewal process is simple: find the expiring subscription, extend it by the desired duration, confirm — done in under 1 minute." },
+      { type: "p", text: "The smart workflow: every Monday, filter your panel for subscriptions expiring within the next 7 days. Send each client a WhatsApp message: 'Hey [Name], your IPTV expires in [X] days — want me to renew it? Reply YES and I'll sort it.' Most will reply immediately. Collect payment, renew the subscription, done." },
+      { type: "p", text: "Offer 3-month subscriptions at a slight discount (e.g., 3 months for the price of 2.5). Clients save a little, you get 3 months of locked-in revenue, and you reduce the monthly renewal workload. Many resellers with 100+ clients do quarterly renewals for 70%+ of their base." },
+      { type: "h2", text: "Which IPTV Apps Should You Recommend to Clients?" },
+      { type: "ul", items: [
+        "Tivimate (Android/Fire Stick) — Best overall. Clean interface, EPG, catch-up, multi-screen. Free version is good; premium unlocks advanced features.",
+        "IPTV Smarters Pro (All platforms) — Great for beginners. Simple setup, works on iOS, Android, smart TVs.",
+        "GSE Smart IPTV (iOS/Android) — Best option for iPhone and iPad users.",
+        "Perfect Player (Android) — Popular alternative with good EPG support.",
+        "Smart IPTV (Samsung/LG Smart TV) — For clients who want to watch directly on their TV without a streaming stick.",
+      ]},
+      { type: "h2", text: "Common Questions from New Resellers" },
+      { type: "ul", items: [
+        "Can I change a client's connection count? Yes, from your panel at any time — takes 30 seconds.",
+        "What if a client loses their credentials? Resend from the panel. You can also reset their password if needed.",
+        "Can I offer different subscription lengths to different clients? Yes. Each subscription is independent — you set the duration per client.",
+        "Do I need to be online when a client's stream is active? No. Everything runs on the server. You only interact with the panel when creating or renewing subscriptions.",
+        "What happens when my credit balance gets low? The panel shows your balance at all times. Top it up anytime — credits add to your existing balance.",
+      ]},
+      { type: "see-also", label: "Ready to get your reseller panel? View all server packages →", href: "/#servers" },
+      { type: "p", text: "The reseller panel is genuinely the simplest part of this business. Most new resellers are comfortable with it after their second or third client setup. The harder part — and the more rewarding part — is growing your client base. That's where the real work is, and where the coaching we provide makes a real difference." },
     ],
   },
 ];

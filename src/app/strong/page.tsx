@@ -4,6 +4,7 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import ServerHero from "@/components/sections/ServerHero";
+import PanelGallery from "@/components/sections/PanelGallery";
 import ServerPricingTable from "@/components/sections/ServerPricingTable";
 import PaymentMethodsSection from "@/components/sections/PaymentMethodsSection";
 import FaqSection from "@/components/sections/FaqSection";
@@ -87,6 +88,16 @@ const strongJsonLd = {
 
 const strong = servers.find((s) => s.id === "strong")!;
 
+const strongGallery = [
+  "/images/strong-feature-1.png",
+  "/images/strong-feature-2.png",
+  "/images/strong-feature-3.png",
+  "/images/strong-feature-4.png",
+  "/images/strong-feature-5.png",
+  "/images/strong-feature-6.png",
+  "/images/strong-feature-7.png",
+];
+
 export default function StrongPage() {
   return (
     <>
@@ -97,6 +108,7 @@ export default function StrongPage() {
       <SiteHeader />
       <main>
         <ServerHero server={strong} />
+        <PanelGallery images={strongGallery} serverName="Strong" />
         <ServerPricingTable pricing={strongPricing} serverName="Strong" serverId="strong" />
         <PaymentMethodsSection />
         <FaqSection />

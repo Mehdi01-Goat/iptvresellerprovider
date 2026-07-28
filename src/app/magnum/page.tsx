@@ -91,6 +91,12 @@ const magnum = servers.find((s) => s.id === "magnum")!;
 const magnumGallery = [
   "/images/magnum-feature-1.png",
   "/images/magnum-feature-2.png",
+  "/images/magnum-feature-3.png",
+  "/images/magnum-feature-4.png",
+  "/images/magnum-feature-5.png",
+  "/images/magnum-feature-6.png",
+  "/images/magnum-feature-7.png",
+  "/images/magnum-feature-8.png",
 ];
 
 export default function MagnumPage() {

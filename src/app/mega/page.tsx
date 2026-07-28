@@ -4,6 +4,7 @@ import SiteHeader from "@/components/layout/SiteHeader";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/layout/WhatsAppFloat";
 import ServerHero from "@/components/sections/ServerHero";
+import PanelGallery from "@/components/sections/PanelGallery";
 import ServerPricingTable from "@/components/sections/ServerPricingTable";
 import PaymentMethodsSection from "@/components/sections/PaymentMethodsSection";
 import FaqSection from "@/components/sections/FaqSection";
@@ -87,6 +88,20 @@ const megaJsonLd = {
 
 const mega = servers.find((s) => s.id === "mega")!;
 
+const megaGallery = [
+  "/images/mega-feature-1.png",
+  "/images/mega-feature-2.png",
+  "/images/mega-feature-3.png",
+  "/images/mega-feature-4.png",
+  "/images/mega-feature-5.png",
+  "/images/mega-feature-6.png",
+  "/images/mega-feature-7.png",
+  "/images/mega-feature-8.png",
+  "/images/mega-feature-9.png",
+  "/images/mega-feature-10.png",
+  "/images/mega-feature-11.png",
+];
+
 export default function MegaPage() {
   return (
     <>
@@ -97,6 +112,7 @@ export default function MegaPage() {
       <SiteHeader />
       <main>
         <ServerHero server={mega} />
+        <PanelGallery images={megaGallery} serverName="Mega" />
         <ServerPricingTable pricing={megaPricing} serverName="Mega" serverId="mega" />
         <PaymentMethodsSection />
         <FaqSection />

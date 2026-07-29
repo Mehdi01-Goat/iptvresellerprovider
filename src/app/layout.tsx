@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | IPTV Reseller Provider",
   },
   description:
-    "The #1 IPTV reseller panel provider. Get wholesale access to Trex, Dino, Mega & Strong IPTV servers. Direct pricing, free 24-hr trials, and expert coaching to earn $500–$5,000/month.",
+    "The #1 IPTV reseller panel provider. Get wholesale access to Trex, Dino, Strong, Mega & Magnum IPTV servers. Direct pricing, free 24-hr trials, and expert coaching to earn $500–$5,000/month.",
   keywords: [
     "iptv reseller",
     "iptv reseller panel",
@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     "iptv reseller business",
     "trex iptv server",
     "dino iptv server",
+    "strong iptv server",
+    "mega iptv server",
+    "magnum iptv server",
     "iptv wholesale",
   ],
   authors: [{ name: "IPTV Reseller Provider", url: "https://iptvresellerprovider.com" }],
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "IPTV Reseller Provider",
     title: "IPTV Reseller Panel | #1 IPTV Reseller Provider",
     description:
-      "Wholesale IPTV reseller panel access to Trex, Dino, Mega & Strong. Direct pricing, free trials, expert coaching. Start your IPTV reseller business today.",
+      "Wholesale IPTV reseller panel access to Trex, Dino, Strong, Mega & Magnum. Direct pricing, free trials, expert coaching. Start your IPTV reseller business today.",
     images: [
       {
         url: "/images/panel-b68.png",
@@ -58,9 +61,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "IPTV Reseller Panel | #1 IPTV Reseller Provider",
     description:
-      "Wholesale IPTV reseller panel access. Free trials on all servers. Expert coaching included.",
+      "Wholesale IPTV reseller panel access to Trex, Dino, Strong, Mega & Magnum. Free trials on all servers. Expert coaching included.",
     images: ["/images/panel-b68.png"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1a6fff",
 };
 
 export default function RootLayout({

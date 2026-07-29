@@ -110,7 +110,7 @@ export default function ServerHero({ server }: { server: Server }) {
                 width={620}
                 height={400}
                 className="w-full object-cover object-top"
-                priority
+                preload
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#080f1e]/40 to-transparent pointer-events-none" />
 

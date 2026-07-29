@@ -56,17 +56,12 @@ export default function HeroSection() {
           </span>
         </motion.div>
 
-        {/* Headline */}
-        <motion.h1
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.65, delay: 0.08 }}
-          className="text-5xl sm:text-6xl lg:text-[74px] font-bold tracking-tight leading-[1.05] text-white mb-6"
-        >
+        {/* Headline — no animation wrapper: this is the LCP element and must paint immediately in SSR'd HTML */}
+        <h1 className="text-5xl sm:text-6xl lg:text-[74px] font-bold tracking-tight leading-[1.05] text-white mb-6">
           Earn $500–$5,000/mo
           <br />
           <span className="text-gradient">as an IPTV Reseller</span>
-        </motion.h1>
+        </h1>
 
         {/* Subtext */}
         <motion.p
@@ -75,7 +70,7 @@ export default function HeroSection() {
           transition={{ duration: 0.65, delay: 0.16 }}
           className="text-white/45 text-xl leading-relaxed max-w-xl mb-10"
         >
-          Get wholesale panel access to Trex, Dino, Mega &amp; Strong — plus expert coaching on how to find clients, set prices, and scale fast.
+          Get wholesale panel access to Trex, Dino, Strong, Mega &amp; Magnum — plus expert coaching on how to find clients, set prices, and scale fast.
         </motion.p>
 
         {/* CTAs */}

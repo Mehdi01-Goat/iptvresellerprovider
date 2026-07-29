@@ -90,7 +90,6 @@ export default function PanelGallery({ images, serverName }: Props) {
                   fill
                   className="object-cover object-top"
                   sizes="(max-width: 1024px) 100vw, 1024px"
-                  priority={current === 0}
                 />
               </motion.div>
             </AnimatePresence>

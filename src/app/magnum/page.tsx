@@ -7,7 +7,7 @@ import ServerHero from "@/components/sections/ServerHero";
 import ServerPricingTable from "@/components/sections/ServerPricingTable";
 import PanelGallery from "@/components/sections/PanelGallery";
 import PaymentMethodsSection from "@/components/sections/PaymentMethodsSection";
-import FaqSection from "@/components/sections/FaqSection";
+import FaqSection, { type Faq } from "@/components/sections/FaqSection";
 import CtaBanner from "@/components/sections/CtaBanner";
 import { servers } from "@/lib/servers";
 import { magnumPricing } from "@/lib/pricing";
@@ -34,7 +34,26 @@ export const metadata: Metadata = {
     url: "https://iptvresellerprovider.com/magnum",
     images: [{ url: "/images/panel-magnum-main.png", width: 1200, height: 630, alt: "Magnum IPTV Panel" }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Magnum IPTV Server | Magnum IPTV Panel — Reseller Access",
+    description:
+      "Premium Magnum IPTV server. 20,469 live channels, 98K+ movies. Wholesale Magnum IPTV panel. Free trial available.",
+    images: ["/images/panel-magnum-main.png"],
+  },
 };
+
+const magnumFaqs: Faq[] = [
+  { q: "How much can I realistically earn as a reseller?", a: "With 50 clients you can earn $300–$550/month. With 100–200 clients you can reach $1,000–$2,200/month. Established resellers with 300–500 clients earn $3,000–$5,500/month. You control your own margins based on the difference between wholesale and retail pricing." },
+  { q: "How do I get my first clients?", a: "Most resellers start with Facebook groups, WhatsApp communities, Telegram channels, or local expat/sports fan groups. Our free coaching provides scripts, strategies, and posting templates that work." },
+  { q: "How much money do I need to start with Magnum IPTV?", a: "You can start with as little as $187 — our entry-level Magnum package with 120 credits. Credits never expire and are fully refundable." },
+  { q: "Can I test Magnum IPTV before buying credits?", a: "Yes — Magnum IPTV comes with a free 24-hour trial. Test stability, channel quality, VOD library, and speed before spending a dollar." },
+  { q: "Do IPTV reseller credits expire?", a: "No — credits never expire. Use them at your own pace over months or years. They are also fully refundable if you're not satisfied." },
+  { q: "What payment methods do you accept?", a: "We accept PayPal, Visa/Mastercard, USDT (TRC20/ERC20), Bitcoin (BTC), Ethereum (ETH), and bank/wire transfers." },
+  { q: "Are your Magnum IPTV prices really wholesale?", a: "Yes. We source directly from the Magnum IPTV server with no middlemen. Most resellers mark up 4–6x and still offer competitive prices in their market." },
+  { q: "Can I do IPTV reselling part-time?", a: "Absolutely. Setting up a client takes 5 minutes and renewals are automatic. Many resellers manage 100+ clients alongside a full-time job." },
+  { q: "What if a client has a technical issue?", a: "We coach you on the most common issues. For anything complex, we're available 24/7 on WhatsApp and typically respond in under an hour." },
+];
 
 const magnumJsonLd = {
   "@context": "https://schema.org",
@@ -58,7 +77,6 @@ const magnumJsonLd = {
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.9",
-        reviewCount: "1600",
         bestRating: "5",
       },
     },
@@ -71,17 +89,11 @@ const magnumJsonLd = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: [
-        { "@type": "Question", name: "How much can I realistically earn as a reseller?", acceptedAnswer: { "@type": "Answer", text: "With 50 clients you can earn $300–$550/month. With 100–200 clients you can reach $1,000–$2,200/month. Established resellers with 300–500 clients earn $3,000–$5,500/month. You control your own margins based on the difference between wholesale and retail pricing." } },
-        { "@type": "Question", name: "How do I get my first clients?", acceptedAnswer: { "@type": "Answer", text: "Most resellers start with Facebook groups, WhatsApp communities, Telegram channels, or local expat/sports fan groups. Our free coaching provides scripts, strategies, and posting templates that work." } },
-        { "@type": "Question", name: "How much money do I need to start with Magnum IPTV?", acceptedAnswer: { "@type": "Answer", text: "You can start with as little as $187 — our entry-level Magnum package with 120 credits. Credits never expire and are fully refundable." } },
-        { "@type": "Question", name: "Can I test Magnum IPTV before buying credits?", acceptedAnswer: { "@type": "Answer", text: "Yes — Magnum IPTV comes with a free 24-hour trial. Test stability, channel quality, VOD library, and speed before spending a dollar." } },
-        { "@type": "Question", name: "Do IPTV reseller credits expire?", acceptedAnswer: { "@type": "Answer", text: "No — credits never expire. Use them at your own pace over months or years. They are also fully refundable if you're not satisfied." } },
-        { "@type": "Question", name: "What payment methods do you accept?", acceptedAnswer: { "@type": "Answer", text: "We accept PayPal, Visa/Mastercard, USDT (TRC20/ERC20), Bitcoin (BTC), Ethereum (ETH), and bank/wire transfers." } },
-        { "@type": "Question", name: "Are your Magnum IPTV prices really wholesale?", acceptedAnswer: { "@type": "Answer", text: "Yes. We source directly from the Magnum IPTV server with no middlemen. Most resellers mark up 4–6x and still offer competitive prices in their market." } },
-        { "@type": "Question", name: "Can I do IPTV reselling part-time?", acceptedAnswer: { "@type": "Answer", text: "Absolutely. Setting up a client takes 5 minutes and renewals are automatic. Many resellers manage 100+ clients alongside a full-time job." } },
-        { "@type": "Question", name: "What if a client has a technical issue?", acceptedAnswer: { "@type": "Answer", text: "We coach you on the most common issues. For anything complex, we're available 24/7 on WhatsApp and typically respond in under an hour." } },
-      ],
+      mainEntity: magnumFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
     },
   ],
 };
@@ -112,7 +124,7 @@ export default function MagnumPage() {
         <PanelGallery images={magnumGallery} serverName="Magnum" />
         <ServerPricingTable pricing={magnumPricing} serverName="Magnum" serverId="magnum" />
         <PaymentMethodsSection />
-        <FaqSection />
+        <FaqSection faqs={magnumFaqs} />
         <CtaBanner />
       </main>
       <Footer />

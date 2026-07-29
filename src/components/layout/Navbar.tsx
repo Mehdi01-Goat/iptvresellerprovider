@@ -68,7 +68,7 @@ export default function Navbar() {
             width={150}
             height={42}
             className={`h-9 w-auto transition-all duration-300 ${!lightMode ? "brightness-0 invert" : ""}`}
-            priority
+            preload
           />
         </Link>
 

@@ -72,7 +72,7 @@ export default function ServersSection() {
                       height={400}
                       className="w-full object-cover object-top"
                       sizes="(max-width: 1024px) 100vw, 50vw"
-                      priority={i < 2}
+                      preload={i < 2}
                     />
                   </div>
 

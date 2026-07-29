@@ -26,6 +26,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       images: [{ url: `https://iptvresellerprovider.com${post.coverImage}`, width: 1200, height: 630, alt: post.coverAlt }],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [`https://iptvresellerprovider.com${post.coverImage}`],
+    },
   };
 }
 
@@ -180,7 +186,7 @@ export default async function BlogPostPage({ params }: Props) {
             src={post.coverImage}
             alt={post.coverAlt}
             fill
-            priority
+            preload
             className="object-cover"
             sizes="100vw"
           />

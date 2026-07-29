@@ -3,7 +3,7 @@ import { posts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://iptvresellerprovider.com";
-  const siteDate = "2026-05-21";
+  const siteDate = "2026-07-29";
 
   return [
     { url: base,                  lastModified: siteDate, changeFrequency: "weekly",  priority: 1.0 },

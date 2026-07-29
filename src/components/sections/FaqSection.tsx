@@ -4,7 +4,9 @@ import { motion } from "framer-motion";
 import * as Accordion from "@radix-ui/react-accordion";
 import { ChevronDown, MessageCircle } from "lucide-react";
 
-const faqs = [
+export type Faq = { q: string; a: string };
+
+const defaultFaqs: Faq[] = [
   {
     q: "How much can I realistically earn as a reseller?",
     a: "It depends on your client base, but here's a realistic breakdown: with 50 clients you can earn $300–$550/month, with 100–200 clients you can reach $1,000–$2,200/month, and established resellers with 300–500 clients earn $3,000–$5,500/month. The profit comes from the difference between the wholesale price you pay us and the retail price you charge your clients. You control your own margins.",
@@ -23,7 +25,7 @@ const faqs = [
   },
   {
     q: "Can I test the servers before buying credits?",
-    a: "Yes — every server comes with a free 24-hour trial. You can test Trex, Dino, Mega, and Strong before committing to anything. Test stability, channel quality, VOD library, and speed on your own devices and your clients' preferred apps before spending a dollar.",
+    a: "Yes — every server comes with a free 24-hour trial. You can test Trex, Dino, Strong, Mega, and Magnum before committing to anything. Test stability, channel quality, VOD library, and speed on your own devices and your clients' preferred apps before spending a dollar.",
   },
   {
     q: "What happens if a client has a technical issue?",
@@ -43,7 +45,7 @@ const faqs = [
   },
 ];
 
-export default function FaqSection() {
+export default function FaqSection({ faqs = defaultFaqs }: { faqs?: Faq[] }) {
   return (
     <section id="faq" className="bg-white py-24">
       <div className="max-w-6xl mx-auto px-6">
